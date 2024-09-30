@@ -1,3 +1,8 @@
+## Heritage House Sales Price Prediction
+
+This project aims to understand and predict house prices by analyzing various factors that contribute to the sale price. We explore the relationships between house attributes and sale prices using statistical techniques like correlation analysis. Through this investigation, we aim to validate specific hypotheses and uncover key drivers that influence house prices in Ames, Iowa.
+
+**<span style="color:red;">Reminder: insert the Techsini picture here once the dashboard is deployed**</span>
 
 ## 1. Dataset Content
 
@@ -104,9 +109,25 @@ Business requirement addressed: BR 2
 * **User Story 13**: As a User I want to **see data plots with visualizations for the relationship between the target variable and the features**
 Business requirement addressed: BR 2
 
-## 3. Hypothesis and how to validate ithe hypothesis
+## 3. Hypothesis and how to validate hypothesis
 
-* List here your project hypothesis(es) and how you envision validating it (them).
+We propose the following hypotheses to explain the relationship between house attributes and sale price:
+
+1.	Size Hypothesis:
+
+Larger properties tend to have higher absolute sale prices. We will investigate correlations between attributes related to house size (e.g., square footage, number of bedrooms) and sale price to validate this hypothesis.
+
+o	<span style="color:red; font-weight: bold;">Validation Result: Hypothesis confirmed/not confirmed. Are features such as '1stFlrSF', 'GarageArea', 'GrLivArea' 'TotalBsmtSF' strongly correlated?</span>
+
+2.	Overall Quality Hypothesis:
+We suspect that the overall quality of a house will significantly impact the sale price. The higher the quality rating, the higher the expected sale/market price.
+
+o	<span style="color:red; font-weight: bold;">Validation Result: Hypothesis confirmed/not confirmed. Are features such as 'KitchenQual_TA' and 'OverallQual' or other 'Qual' features strongly correlated?</span>
+
+3.	Overall Condition Hypothesis:
+We suspect that the overall condition of a house will influence the sale price. Houses in better condition should command a higher price.
+
+o	<span style="color:red; font-weight: bold;">Validation Result: Hypothesis confirmed/not confirmed. Keep in mind that overall condition has overlap with remodel work/date/timing of remodeling work</span>
 
 ## 4. Rationale to map the business requirements to the Data Visualisations and ML tasks
 
@@ -176,12 +197,6 @@ The version number of the libraries used can be found in the [requirements file]
 
 **[Streamlit 1.34.0](https://streamlit.io/)** Open-source library to create and share we applications for machine learning and data science projects
 
-
-
-
-
-
-
 ## Credits
 
 * In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
@@ -189,17 +204,14 @@ The version number of the libraries used can be found in the [requirements file]
 
 ### Content
 
-* The text for the Home page was taken from Wikipedia Article A
 * Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
 * The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
 
 ### Media
 
-* The photos used on the home and sign-up page are from This Open Source site
-* The images used for the gallery page were taken from this other open-source site
+* The image used at the start of the README was created with the Multi Device Website Mockup generator Techsini 
 
 ## Acknowledgements (optional)
-
 
 * In case you would like to thank the people that provided support through this project.
 
