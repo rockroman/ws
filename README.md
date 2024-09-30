@@ -4,6 +4,27 @@ This project aims to understand and predict house prices by analyzing various fa
 
 **<span style="color:red;">Reminder: insert the Techsini picture here once the dashboard is deployed**</span>
 
+# Table of Contents
+- [Table of Contents](#table-of-contents)
+  - [1. Dataset Content](#1-dataset-content)
+  - [2. Business Requirements](#2-business-requirements)
+    - [EPICS](#epics)
+    - [User Stories (US)](#user-stories-us)
+  - [3. Hypothesis and how to validate hypothesis](#3-hypothesis-and-how-to-validate-hypothesis)
+  - [4. Rationale to map the business requirements to the Data Visualisations and ML tasks](#4-rationale-to-map-the-business-requirements-to-the-data-visualisations-and-ml-tasks)
+  - [5. ML Business Case](#5-ml-business-case)
+  - [6. Dashboard Design](#6-dashboard-design)
+  - [7. Unfixed Bugs](#7-unfixed-bugs)
+  - [8. Deployment](#8-deployment)
+    - [Heroku](#heroku)
+  - [9. Packages and technologies used](#9-packages-and-technologies-used)
+    - [Technologies used:](#technologies-used)
+  - [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
+  - [Credits](#credits)
+    - [Content](#content)
+    - [Media](#media)
+  - [Acknowledgements (optional)](#acknowledgements-optional)
+
 ## 1. Dataset Content
 
 * The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). Fictitious user stories were created where predictive analytics can be applied in a real project in the workplace.
