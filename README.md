@@ -111,7 +111,6 @@ Business requirement addressed: BR 2
 ## 4. Rationale to map the business requirements to the Data Visualisations and ML tasks
 
 * List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
-  
 
 ## 5. ML Business Case
 
