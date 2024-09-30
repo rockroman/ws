@@ -118,7 +118,6 @@ Business requirement addressed: BR 2
 * Use the proper ML terminology such as labels, targets, features, variables, train
 * ML pipeline to include the regressor model and live data data to estimate sales prices through input widgets
 
-
 ## 6. Dashboard Design
 
 * List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items that your dashboard library supports.
