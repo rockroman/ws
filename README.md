@@ -1,50 +1,7 @@
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-## Template Instructions
+## 1. Dataset Content
 
-Welcome,
-
-This is the Code Institute student template for the Heritage Housing project option in Predictive Analytics. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
-
-You can safely delete the Template Instructions section of this README.md file,  and modify the remaining paragraphs for your own project. Please do read the Template Instructions at least once, though! It contains some important information about the IDE and the extensions we use.
-
-## How to use this repo
-
-1. Use this template to create your GitHub project repo
-
-2. Log into the cloud-based IDE with your GitHub account.
-
-3. On your Dashboard, click on the Create button
-
-4. Paste in the URL you copied from GitHub earlier
-
-5. Click Create
-
-6. Wait for the workspace to open. This can take a few minutes.
-
-7. Open a new terminal and `pip3 install -r requirements.txt`
-
-11. Open the jupyter_notebooks directory and click on the notebook you want to open.
-
-12. Click the kernel button and choose Python Environments.
-
-Note that the kernel says Python 3.8.18 as it inherits from the workspace so it will be Python-3.8.18 as installed by our template. To confirm this you can use `! python --version` in a notebook code cell.
-
-## Cloud IDE Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In your Cloud IDE, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with *Regenerate API Key*.
-
-## Dataset Content
-
-* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
+* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data). Fictitious user stories were created where predictive analytics can be applied in a real project in the workplace.
 * The dataset has almost 1.5 thousand rows and represents housing records from Ames, Iowa, indicating house profile (Floor Area, Basement, Garage, Kitchen, Lot, Porch, Wood Deck, Year Built) and its respective sale price for houses built between 1872 and 2010.
 
 |Variable|Meaning|Units|
@@ -74,42 +31,111 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 |YearRemodAdd|Remodel date (same as construction date if no remodelling or additions)|1950 - 2010|
 |SalePrice|Sale Price|34900 - 755000|
 
-## Business Requirements
+## 2. Business Requirements
 
-As a good friend, you are requested by your friend, who has received an inheritance from a deceased great-grandfather located in Ames, Iowa, to  help in maximising the sales price for the inherited properties.
+The client who has received an inheritance from a deceased great-grandfather. Included in the inheritance are four houses located in Ames, Iowa, USA. 
+Although the client has an excellent understanding of property prices in her home country, she fears that basing her estimates for property worth on 
+her current knowledge of the Iowan market might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might 
+not be the same in Ames, Iowa.
 
-Although your friend has an excellent understanding of property prices in her own state and residential area, she fears that basing her estimates for property worth on her current knowledge might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might not be the same in Ames, Iowa. She found a public dataset with house prices for Ames, Iowa, and will provide you with that.
+The client has provided us a public dataset with house prices for Ames, Iowa.
 
-* 1 - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects data visualisations of the correlated variables against the sale price to show that.
-* 2 - The client is interested in predicting the house sale price from her four inherited houses and any other house in Ames, Iowa.
+ You will build a Data Web App to predict the sales price from the four houses based on the house attributes. 
 
-## Hypothesis and how to validate?
+The business requirements are:												
+                                                
+* **BR1** - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects
+**data visualisations** of the **correlated variables** against the sale price to show that
+* **BR2** - The client is interested in predicting the house sales price from her four inherited houses, and any other house in Ames, Iowa.
+
+To address the business requirements, Epics and User Stories were defined. The user stories are broken down into small tasks so that an agile process can be used to implement each task/user story.
+
+### EPICS
+
+* Data collection and information gathering
+
+* Visualisation of data, data cleaning and data preparation
+
+* Train the model, optimize the model and validate the model
+
+* Plan the dashboard, design and develop the dashboard
+
+* Dashboard deployment on Heroku and release
+
+### User Stories (US)
+
+The user stories are defined by the business requirements.
+
+* **User Story 1**: The client wants to know those attributes of a house that are most correlated with its potential sale price. The prediciton of a sales prices shall be based on the set of features with the highest predictive power. 
+Business requirement addressed: BR 1
+
+* **User Story 2**: The client wants to have a the best possible prediction of the sales price of the houses inherited. The client wants to achieve the maximum possible proceeds for the four houses inherited.
+Business requirement addressed: BR 2
+
+* **User Story 3**: As a developer I can **install all requirements and packages** so that I can **work with the tools needed to complete the task**
+Business requirement addressed: BR 1
+
+* **User Story 4**: As a developer I can **start the deyployment process of my app on Heroku early** so that **I have a possibility for end-to-end manual deployment testing from the beginning**
+
+* **User Story 5**: As a developer I can **import relevant data into Jupyter Notebook** so that **I can analyze the dataset**
+Business requirement addressed: BR 1
+
+* **User Story 6**: As a developer I want **a dependable cleaning process** so that I can **ensure that the dataset collected is accurate and of high quality**
+Business requirement addressed: BR 1
+
+* **User Story 7**: As a developer I want **to measure the model performance** so that I **can have reliable results with high predictive power**
+Business requirement addressed: BR 2
+
+* **User Story 8**: As a developer I can **create a dashboard** so that I **can display the results of model predictions**
+Business requirement addressed: BR 2
+
+* **User Story 9**: As a User **I can see the Streamlit starting page** so that **I can quickly see the overview over the project**      
+Business requirement addressed: BR 2
+
+* **User Story 10**: As a User, I want **to see a correlation page on Streamlit** so that I **can understand the correlation of features with the target variable**                 
+Business requirement addressed: BR 2
+
+* **User Story 11**: As a User I want to **test individual observations against the model outcome** so that I **can determine the target variable with my features provided**
+Business requirement addressed: BR 2
+
+* **User Story 12**: As a User I want to **have interactive input fields** so that I **can provide individual data to predict the target variable**	
+Business requirement addressed: BR 2
+
+* **User Story 13**: As a User I want to **see data plots with visualizations for the relationship between the target variable and the features**
+Business requirement addressed: BR 2
+
+## 3. Hypothesis and how to validate ithe hypothesis
 
 * List here your project hypothesis(es) and how you envision validating it (them).
 
-## The rationale to map the business requirements to the Data Visualisations and ML tasks
+## 4. Rationale to map the business requirements to the Data Visualisations and ML tasks
 
 * List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+  
 
-## ML Business Case
+## 5. ML Business Case
 
-* In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+* Frame the business case using the method we covered in the course.
+* Use the proper ML terminology such as labels, targets, features, variables, train
+* ML pipeline to include the regressor model and live data data to estimate sales prices through input widgets
 
-## Dashboard Design
+
+## 6. Dashboard Design
 
 * List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items that your dashboard library supports.
-* Eventually, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type)
+* Eventually, during the project development, you may revisit your dashboard plan to update a given feature 
 
-## Unfixed Bugs
+## 7. Unfixed Bugs
 
 * You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not valid reason to leave bugs unfixed.
 
-## Deployment
+## 8. Deployment
 
 ### Heroku
 
 * The App live link is: <https://YOUR_APP_NAME.herokuapp.com/>
 * Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
+  
 * The project was deployed to Heroku using the following steps.
 
 1. Log in to Heroku and create an App
@@ -122,6 +148,9 @@ Although your friend has an excellent understanding of property prices in her ow
 ## Main Data Analysis and Machine Learning Libraries
 
 * Here you should list the libraries you used in the project and provide example(s) of how you used these libraries.
+
+
+
 
 ## Credits
 
