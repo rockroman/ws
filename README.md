@@ -145,9 +145,41 @@ Business requirement addressed: BR 2
 5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
 6. If the slug size is too large then add large files not required for the app to the .slugignore file.
 
-## Main Data Analysis and Machine Learning Libraries
+## 9. Packages and technologies used
+                                                           
+### Technologies used:
 
-* Here you should list the libraries you used in the project and provide example(s) of how you used these libraries.
+**[Git](https://git-scm.com/)** The version control system Git was used to document the development of the application and to push code to the GitHub repository. The specific reasons for the commit are reflected in the respective commit message
+
+**[GitHub](https://github.com/)** The code files, README files, and assets are stored on GitHub. The code on GitHub was pushed from Git
+                                                            
+**[Heroku](https://www.heroku.com/)** Heroku is a platform as a service (PaaS) to build, run, and operate applications cloud-based. It was used to deploy the website
+
+**[Techsini](https://techsini.com/multi-mockup/)** Multi Device Website Mockup generator
+           
+**[Visual Studio Code](https://code.visualstudio.com/)** Visual Studio Code (VS-Code) was used as integrated development environment (IDE) for the entire project. The GitHub repository was cloned to VS-Code for this purpose	
+
+
+## Main Data Analysis and Machine Learning Libraries											
+
+The version number of the libraries used can be found in the [requirements file](https://github.com/Werner-Staeblein/Project-5/blob/main/requirements.txt) of this project.
+
+**[Jupiter Notebooks](https://jupyter.org/)** Open-source web app to create and share documents
+                                                            
+**[Kaggle 1.6.12](https://pypi.org/project/kaggle/)** Tool for download of dataset from Kaggle
+                                                            
+**[Matplotlib 3.4.3](https://matplotlib.org/)** Data visualisation library for correlation analysis															
+                                                         
+**[Numpy 1.19.5](https://numpy.org/)** Library for computing, providing a collection of mathematical functions to work on arrays
+
+**[Pandas 1.3.5](https://pandas.pydata.org/)** Library for data manipulation and analysis with data structures to handle structured data.
+
+**[Python](https://www.python.org/)** Python is an interpreted, high-level and general purpose programming language
+
+**[Streamlit 1.34.0](https://streamlit.io/)** Open-source library to create and share we applications for machine learning and data science projects
+
+
+
 
 
 
