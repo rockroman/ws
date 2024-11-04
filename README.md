@@ -244,4 +244,5 @@ The version number of the libraries used can be found in the [requirements file]
 ## Acknowledgements (optional)
 
 * In case you would like to thank the people that provided support through this project
+* 
 
