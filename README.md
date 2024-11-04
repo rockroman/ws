@@ -22,6 +22,7 @@ This project aims to understand and predict house prices by analyzing various fa
     - [Technologies used:](#technologies-used)
   - [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
   - [Credits](#credits)
+    - [Code](#code)
     - [Content](#content)
     - [Media](#media)
   - [Acknowledgements (optional)](#acknowledgements-optional)
@@ -231,6 +232,13 @@ The version number of the libraries used can be found in the [requirements file]
 
 * In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
 * You can break the credits section up into Content and Media, depending on what you have included in your project.
+
+### Code
+
+The following functions from walkthrough project 2 were used in the project
+
+* Evaluate MissingData funciton from under the heading "Data Cleaning" and "Assessing Missing Data Levels"
+
 
 ### Content
 
