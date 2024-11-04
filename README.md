@@ -7,6 +7,7 @@ This project aims to understand and predict house prices by analyzing various fa
 # Table of Contents
 - [Table of Contents](#table-of-contents)
   - [1. Dataset Content](#1-dataset-content)
+  - [Project Terms used | Jargon explained](#project-terms-used--jargon-explained)
   - [2. Business Requirements](#2-business-requirements)
     - [EPICS](#epics)
     - [User Stories (US)](#user-stories-us)
@@ -57,22 +58,29 @@ This project aims to understand and predict house prices by analyzing various fa
 |YearRemodAdd|Remodel date (same as construction date if no remodelling or additions)|1950 - 2010|
 |SalePrice|Sale Price|34900 - 755000|
 
+## Project Terms used | Jargon explained
+
+* **Sale price** is the market price of a house with features represented by the list of features for the respective house. 
+* **inherited house** is a house that the client inherited from grandparents that needs evaluation of market price
+* **summed price** is total sum of all predicted market prices of all four houses that the client inherited
+
+
 ## 2. Business Requirements
 
-The client who has received an inheritance from a deceased great-grandfather. Included in the inheritance are four houses located in Ames, Iowa, USA. 
+Our client has received an inheritance from a deceased great-grandfather. Included in the inheritance are four houses located in Ames, Iowa, USA. 
 Although the client has an excellent understanding of property prices in her home country, she fears that basing her estimates for property worth on 
 her current knowledge of the Iowan market might lead to inaccurate appraisals. What makes a house desirable and valuable where she comes from might 
 not be the same in Ames, Iowa.
 
-The client has provided us a public dataset with house prices for Ames, Iowa.
-
- You will build a Data Web App to predict the sales price from the four houses based on the house attributes. 
+Our client has provided us a public dataset with house prices for Ames, Iowa. Our client has asked us to help to maximize the sale price for
+the inherited properties with predictions on the sale price to be made for the four houses inherited based on the respective attributes of those
+houses.
 
 The business requirements are:												
                                                 
-* **BR1** - The client is interested in discovering how the house attributes correlate with the sale price. Therefore, the client expects
-**data visualisations** of the **correlated variables** against the sale price to show that
-* **BR2** - The client is interested in predicting the house sales price from her four inherited houses, and any other house in Ames, Iowa.
+* **BR1** - The client is interested in discovering how the house attributes correlate with the sale price in the Ames, Iowa, region. Therefore, the client expects **data visualisations** of the **correlated variables** against the sale price to show that.
+
+* **BR2** - The client is interested in predicting the house sale price from her four inherited houses, and any other house in Ames, Iowa.
 
 To address the business requirements, Epics and User Stories were defined. The user stories are broken down into small tasks so that an agile process can be used to implement each task/user story.
 
@@ -92,25 +100,26 @@ To address the business requirements, Epics and User Stories were defined. The u
 
 The user stories are defined by the business requirements.
 
-* **User Story 1**: The client wants to know those attributes of a house that are most correlated with its potential sale price. The prediciton of a sales prices shall be based on the set of features with the highest predictive power. 
+* **User Story 1**: The client wants to know those attributes of a house that are most correlated with its potential sale price. The prediciton of a sale price shall be based on the set of features with the highest predictive power.
 Business requirement addressed: BR 1
 
 * **User Story 2**: The client wants to have a the best possible prediction of the sales price of the houses inherited. The client wants to achieve the maximum possible proceeds for the four houses inherited.
 Business requirement addressed: BR 2
 
 * **User Story 3**: As a developer I can **install all requirements and packages** so that I can **work with the tools needed to complete the task**
-Business requirement addressed: BR 1
+Business requirement addressed: BR 1 & 2
 
 * **User Story 4**: As a developer I can **start the deyployment process of my app on Heroku early** so that **I have a possibility for end-to-end manual deployment testing from the beginning**
+Business requirement addressed: BR 1 & 2
 
 * **User Story 5**: As a developer I can **import relevant data into Jupyter Notebook** so that **I can analyze the dataset**
-Business requirement addressed: BR 1
+Business requirement addressed: BR 1 & 2 
 
 * **User Story 6**: As a developer I want **a dependable cleaning process** so that I can **ensure that the dataset collected is accurate and of high quality**
 Business requirement addressed: BR 1
 
 * **User Story 7**: As a developer I want **to measure the model performance** so that I **can have reliable results with high predictive power**
-Business requirement addressed: BR 2
+Business requirement addressed: BR 1 & 2
 
 * **User Story 8**: As a developer I can **create a dashboard** so that I **can display the results of model predictions**
 Business requirement addressed: BR 2
