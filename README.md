@@ -240,9 +240,18 @@ The following functions from walkthrough project 2 were used in the project
 * Evaluate MissingData funciton from under the heading "Data Cleaning" and "Assessing Missing Data Levels"
 
 
+The following resources were used to better understand the different steps of the ML pipeline or statistical concepts
+
+**[ML-Mastery](https://machinelearningmastery.com/feature-relationships-101/)** This article provided me a good overview over the relationships
+of features in the Ames Housing dataset.
+
+The book "Statistics for business and economics" by Anderson/Sweeney/Williams, 7th edition, 1999. Even though this seems a "dated" source the
+statistical concepts for Multiple Regression and Regression Analysis are explained well in this book, thus improving my overall understanding how to address
+the underlying project goal
+
+
 ### Content
 
-* Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
 * The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
 
 ### Media
