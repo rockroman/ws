@@ -289,7 +289,7 @@ the underlying project goal
 
 ### Media
 
-* The image used at the start of the README was created with the Multi Device Website Mockup generator Techsini 
+* The image used at the start of the README was created with the Multi Device Website Mockup generator Techsini
 
 ## Acknowledgements (optional)
 
