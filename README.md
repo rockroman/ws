@@ -14,11 +14,14 @@ This project aims to understand and predict house prices by analyzing various fa
   - [3. Hypothesis and how to validate hypothesis](#3-hypothesis-and-how-to-validate-hypothesis)
   - [4. Rationale to map the business requirements to the Data Visualisations and ML tasks](#4-rationale-to-map-the-business-requirements-to-the-data-visualisations-and-ml-tasks)
   - [5. ML Business Case](#5-ml-business-case)
-  - [6. Dashboard Design](#6-dashboard-design)
-  - [7. Unfixed Bugs](#7-unfixed-bugs)
-  - [8. Deployment](#8-deployment)
+  - [6. Data Preprocessing](#6-data-preprocessing)
+    - [Data Cleaning Pipeline](#data-cleaning-pipeline)
+    - [Feature Engineering](#feature-engineering)
+  - [7. Dashboard Design](#7-dashboard-design)
+  - [8. Unfixed Bugs](#8-unfixed-bugs)
+  - [9. Deployment](#9-deployment)
     - [Heroku](#heroku)
-  - [9. Packages and technologies used](#9-packages-and-technologies-used)
+  - [10. Packages and technologies used](#10-packages-and-technologies-used)
     - [Technologies used:](#technologies-used)
   - [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
   - [Credits](#credits)
@@ -170,16 +173,45 @@ o	<span style="color:red; font-weight: bold;">Validation Result: Hypothesis conf
 * Use the proper ML terminology such as labels, targets, features, variables, train
 * ML pipeline to include the regressor model and live data data to estimate sales prices through input widgets
 
-## 6. Dashboard Design
+## 6. Data Preprocessing
+
+### Data Cleaning Pipeline
+
+A data cleaining pipeline was prepared to address missing values. 
+
+Continuous Variables such as ['LotFrontage'] and ['BedroomAbvGr#] with missing values have been imputed with the mean as there were
+no large outliers and to keep the imputed values with the range of observed values in the dataset.
+
+Continuous Variables with skewness in the data such as ['2ndFlrSF'] and ['MasVnrAreaand'] with missing values have been imputed with the median. 
+This reduces the influence of outlier data on the imputed values.
+
+Categorical variables ['GarageFinish'], ['BsmtFinType1'], ['BsmtExposure'] likely have missing values because the respective feature is
+not applicable/observable/existent for the respective property. These values are filled/imputed with 'None' so that the observation that
+any such respective feature may not exist remains captured in the dataset. The fact that something "does not exist" remains an informative
+datapoint for the remainder of the analysis.
+
+Features ['EnclosedPorch'], ['GarageYrBlt'], ['WoodDeckSF'] with missing data were removed from the dataset. This is mainly because two
+of these features have a substantial number of missing values. Imputing from a low number of observations (10%) to a much larger number
+of missing observations (around 90%) lkely distorts the dataset. In addition, the features dropped likely do not have a high predictive
+power for the target as defined in the analtiyical hypothesis.
+
+Further explanations on the analytical rationale to address the missing data in the dataset can be found in the file 02_data_cleaning.ipynb.
+
+### Feature Engineering
+
+**<span style="color:red;">Reminder: Encoding and Transformation of fetures to be included here**</span>
+
+
+## 7. Dashboard Design
 
 * List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items that your dashboard library supports.
 * Eventually, during the project development, you may revisit your dashboard plan to update a given feature 
 
-## 7. Unfixed Bugs
+## 8. Unfixed Bugs
 
 * You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not valid reason to leave bugs unfixed.
 
-## 8. Deployment
+## 9. Deployment
 
 ### Heroku
 
@@ -195,7 +227,7 @@ o	<span style="color:red; font-weight: bold;">Validation Result: Hypothesis conf
 5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
 6. If the slug size is too large then add large files not required for the app to the .slugignore file.
 
-## 9. Packages and technologies used
+## 10. Packages and technologies used
                                                            
 ### Technologies used:
 
