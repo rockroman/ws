@@ -283,7 +283,6 @@ The book "Statistics for business and economics" by Anderson/Sweeney/Williams, 7
 statistical concepts for Multiple Regression and Regression Analysis are explained well in this book, thus improving my overall understanding how to address
 the underlying project goal
 
-
 ### Content
 
 * The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
