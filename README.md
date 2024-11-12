@@ -272,6 +272,7 @@ The following functions from walkthrough project 2 were used in the project
 * Evaluate MissingData funciton from under the heading "Data Cleaning" and "Assessing Missing Data Levels"
 * DataCleaningEffect function from under the heading "Data Cleaning"
 * Functions heatmap_corr(), heatmap_pps(), CalculateCorrAndPPS(), and DisplayCorrAndPPS() taken from CI ProdictePowerScore Unit1: Introduction, Video No. 6
+* Functions to create plots (inside 03_correlation_study.ipynb) taken from walktrhough project 2 (churned customer study)
 
 
 The following resources were used to better understand the different steps of the ML pipeline or statistical concepts
