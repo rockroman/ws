@@ -148,24 +148,43 @@ Business requirement addressed: BR 2
 We propose the following hypotheses to explain the relationship between house attributes and sale price:
 
 1.	Size Hypothesis:
+Larger properties tend to have higher absolute sale prices. 
 
-Larger properties tend to have higher absolute sale prices. We will investigate correlations between attributes related to house size (e.g., square footage, number of bedrooms) and sale price to validate this hypothesis.
+- We will investigate correlations between attributes related to house size (e.g., square footage, number of bedrooms) and sale price to validate this hypothesis.
 
-o	<span style="color:red; font-weight: bold;">Validation Result: Hypothesis confirmed/not confirmed. Are features such as '1stFlrSF', 'GarageArea', 'GrLivArea' 'TotalBsmtSF' strongly correlated?</span>
+o	<span style="color:red; font-weight: bold;">Validation Result: Hypothesis confirmed. Features such as '1stFlrSF', 'GarageArea', 'GrLivArea' 'TotalBsmtSF' proven to be meaningfully correlated in correlation study</span>
 
 2.	Overall Quality Hypothesis:
 We suspect that the overall quality of a house will significantly impact the sale price. The higher the quality rating, the higher the expected sale/market price.
 
-o	<span style="color:red; font-weight: bold;">Validation Result: Hypothesis confirmed/not confirmed. Are features such as 'KitchenQual_TA' and 'OverallQual' or other 'Qual' features strongly correlated?</span>
+- We will investigate correlations between attributes related to the quality assessment of the house such as 'OverallQual' or 'KitchenQual' to validate the hypothesis
+
+o	<span style="color:red; font-weight: bold;">Validation Result: Hypothesis confirmed. Features such as 'KitchenQual_TA' and 'OverallQual' proven to be meaningfully correlated in correlation study</span>
 
 3.	Overall Condition Hypothesis:
 We suspect that the overall condition of a house will influence the sale price. Houses in better condition should command a higher price.
 
-o	<span style="color:red; font-weight: bold;">Validation Result: Hypothesis confirmed/not confirmed. Keep in mind that overall condition has overlap with remodel work/date/timing of remodeling work</span>
+- We will investigate the data on the 'YearBuilt' or 'YearRemodAdd' to validate this hypothesis.
+
+o	<span style="color:red; font-weight: bold;">Validation Result: Hypothesis confirmed. Features such as 'YearBuilt' and 'YearRemodAdd' that reflect overall condition have proven to be meaningfully correlated in correlation study</span>
+
 
 ## 4. Rationale to map the business requirements to the Data Visualisations and ML tasks
 
 * List your business requirements and a rationale to map them to the Data Visualisations and ML tasks.
+                                               
+* **Business Requirement No. 1**: Visualisation of Data and Correlation Study 
+  
+  - Correlation Study (Pearson and Spearman) to verify how house attributes/variables are correlated with the target
+  - Determine the significance of correlation
+  - The variables of the dataset representing the attributes of houses in the dataset are plotted against the house price to gain insight into correlation
+  - The business requirement is addressed in this notebook: **[Correlation Study](jupyter_notebooks\03_correlation_study.ipynb)**
+ 
+* **Business Requirement No. 2**: Regression Analysis
+
+- The target variable (house price) is continuous. Therefore, a regression analysis is conducted to address the business requirement. If a regression model proves to perform poorly on required metrics, a classification analysis can be done
+- The business requirement is addressed in this notebook: **[ML Modeling](jupyter_notebooks\05_ml_model_and_evaluation.ipynb)**
+
 
 ## 5. ML Business Case
 
