@@ -199,9 +199,50 @@ o	<span style="color:red; font-weight: bold;">Validation Result: Hypothesis conf
 
     - The client could approximate the sale prices of houses inherited by drawing inferences from the datapoints in the dataset for houses with similar features. This approach may, however, lead to inaccuracies and is very subjective
 
-- Does the customer need a dashboard or API?
+- Does the customer need a dashboard or API
 
     - The client needs a dashboard
+  
+- A successful project outcome for the customer is defined as
+
+    - An analysis that shows the variables most correlated with the sale price to help the client to *maximize the sale price* for houses inherited
+
+- Are there any ethical or privacy concerns
+
+    - The dataset is public. Therefore, there are no ethical or privacy concerns
+
+- Are there clear EPICS and user stories for agile implementation
+
+    - EPICS were defined., User stories were created and organized as GitHub issues on a Kanban board in GitHub, enabling clear tracking for agile implementation.
+    - The GitHub project board can be found here: **[GitHub Project Board](https://github.com/users/Werner-Staeblein/projects/27)**
+    - EPICS are broken down as follows
+
+      - Information gathering and data collection.
+      - Data visualization, cleaning, and preparation.
+      - Model training, optimization and validation.
+      - Dashboard planning, designing, and development.
+      - Dashboard deployment and release.
+
+- Does the data suggest a particular model
+
+    - For a continuous numeric prediction target, a regression model is appropriate
+  
+- What are the project inputs and intended outputs
+
+    (a) Model inputs are house attributes from the public dataset
+
+    (b) Output is the predicted sales price in USD, a continuous numeric value
+
+    The model should predict sale price of a house based on the known attributes of the house inherited
+
+     - The client has provided the *attributes* of the houses inherited. For each of the 4 houses, the model shall predict sale price based on these *known attributes*. An additional output is the sum of the predicted sale price for all four inherited houses combined
+  
+     - A user of the dashboard shall be enabled to predict house price for any house that is not any of the four houses inherited by the client. The user can enter *attributes* for a given hosue and receives output of predicted sale price
+
+- What does succes look like
+
+    - It was agreed with client that a R2 score of at least 0.75 on the train set and test set is defined as success
+    - A failure is defined as 
 
 
 
