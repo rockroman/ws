@@ -18,6 +18,11 @@ This project aims to understand and predict house prices by analyzing various fa
     - [Data Cleaning Pipeline](#data-cleaning-pipeline)
     - [Feature Engineering](#feature-engineering)
   - [7. Dashboard Design](#7-dashboard-design)
+  - [Page 1: Quick Project Summary](#page-1-quick-project-summary)
+  - [Page 2: Correlation Page](#page-2-correlation-page)
+  - [Page 3: House Price Predictor Page](#page-3-house-price-predictor-page)
+  - [Page 4: Hypothesis](#page-4-hypothesis)
+  - [Page 5: Technical Page](#page-5-technical-page)
   - [8. Unfixed Bugs](#8-unfixed-bugs)
   - [9. Deployment](#9-deployment)
     - [Heroku](#heroku)
@@ -205,7 +210,7 @@ o	<span style="color:red; font-weight: bold;">Validation Result: Hypothesis conf
   
 - A successful project outcome for the customer is defined as
 
-    - An analysis that shows the variables most correlated with the sale price to help the client to *maximize the sale price* for houses inherited
+    - an analysis that shows the variables most correlated with the sale price to help the client to *maximize the sale price* for houses inherited
 
 - Are there any ethical or privacy concerns
 
@@ -237,20 +242,15 @@ o	<span style="color:red; font-weight: bold;">Validation Result: Hypothesis conf
 
      - The client has provided the *attributes* of the houses inherited. For each of the 4 houses, the model shall predict sale price based on these *known attributes*. An additional output is the sum of the predicted sale price for all four inherited houses combined
   
-     - A user of the dashboard shall be enabled to predict house price for any house that is not any of the four houses inherited by the client. The user can enter *attributes* for a given hosue and receives output of predicted sale price
+     - A user of the dashboard shall be enabled to predict house price for any house that is not any of the four houses inherited by the client. The user can enter *attributes* for a given hosue through input widgets and receives live data for the estimated sale price
 
 - What does succes look like
 
     - It was agreed with client that a R2 score of at least 0.75 on the train set and test set is defined as success
-    - A failure is defined as 
+    
+- How will the client benefit
 
-
-
-
-
-* Use the proper ML terminology such as labels, targets, features, variables, train
-
-* ML pipeline to include the regressor model and live data data to estimate sales prices through input widgets
+    - The client will maximize the sales price for the inherited properties
 
 ## 6. Data Preprocessing
 
@@ -280,10 +280,35 @@ Further explanations on the analytical rationale to address the missing data in 
 
 **<span style="color:red;">Reminder: Encoding and Transformation of fetures to be included here**</span>
 
-
 ## 7. Dashboard Design
 
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other items that your dashboard library supports.
+## Page 1: Quick Project Summary
+
+  - Describe the project dataset
+  - Describe the client's requirements
+  - Describe project key terms and jargon
+
+## Page 2: Correlation Page
+
+  - Show findings which features have the strongest correlation to house sale price
+  - Include visualisations of correlations with scatter plots of those variables that have a high correlation to the sale price. Enable dashboard user to analyze data visually
+
+## Page 3: House Price Predictor Page
+
+- Display the 4 houses's attributes and their respective predicted sales price
+- Show information on the sum of predicted sales prices for all 4 inherited houses
+- Interactive widgets to allow a user to provide real-time house data to predict the sale price on a any given house
+
+## Page 4: Hypothesis
+
+- Display the project hypothesis and the hypothesis were validated across the project 
+
+## Page 5: Technical Page
+
+- Display model performance
+- Display ML pipeline steps  
+
+
 * Eventually, during the project development, you may revisit your dashboard plan to update a given feature 
 
 ## 8. Unfixed Bugs
