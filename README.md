@@ -14,21 +14,23 @@ This project aims to understand and predict house prices by analyzing various fa
   - [3. Hypothesis and how to validate hypothesis](#3-hypothesis-and-how-to-validate-hypothesis)
   - [4. Rationale to map the business requirements to the Data Visualisations and ML tasks](#4-rationale-to-map-the-business-requirements-to-the-data-visualisations-and-ml-tasks)
   - [5. ML Business Case](#5-ml-business-case)
-  - [6. Data Preprocessing](#6-data-preprocessing)
+  - [7. **CRISP-DM**](#7-crisp-dm)
+  - [| 6. Deployment | move the application into production to allow users to take advantage of it |](#-6-deployment--move-the-application-into-production-to-allow-users-to-take-advantage-of-it-)
+  - [7. Data Preprocessing](#7-data-preprocessing)
     - [Data Cleaning Pipeline](#data-cleaning-pipeline)
     - [Feature Engineering](#feature-engineering)
-  - [7. Dashboard Design](#7-dashboard-design)
+  - [8. Dashboard Design](#8-dashboard-design)
   - [Page 1: Quick Project Summary](#page-1-quick-project-summary)
   - [Page 2: Correlation Page](#page-2-correlation-page)
   - [Page 3: House Price Predictor Page](#page-3-house-price-predictor-page)
   - [Page 4: Hypothesis](#page-4-hypothesis)
   - [Page 5: Technical Page | Model Performance Page](#page-5-technical-page--model-performance-page)
-  - [8. Unfixed Bugs](#8-unfixed-bugs)
-  - [9. Deployment](#9-deployment)
+  - [9. Unfixed Bugs](#9-unfixed-bugs)
+  - [10. Deployment](#10-deployment)
     - [Heroku](#heroku)
-  - [10. Packages and technologies used](#10-packages-and-technologies-used)
+  - [11. Packages and technologies used](#11-packages-and-technologies-used)
     - [Technologies used:](#technologies-used)
-  - [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
+    - [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
   - [Credits](#credits)
     - [Code](#code)
     - [Content](#content)
@@ -195,12 +197,12 @@ o	<span style="color:red; font-weight: bold;">Validation Result: Hypothesis conf
 
 * Frame the business case using the method we covered in the course.
 
-- Business requirements:
+- Business requirements
 
     - The client wants to know how house attributes correlate with sale price. The client expects data visualisations of correlated features with the sale price
     - The client wants to predict house sales prices for the 4 inherited houses. In addition, the client want to prdict house sale price for other houses in Ames, Iowa
 
-- Can traditional data analysis be used:
+- Can traditional data analysis be used
 
     - The client could approximate the sale prices of houses inherited by drawing inferences from the datapoints in the dataset for houses with similar features. This approach may, however, lead to inaccuracies and is very subjective
 
@@ -208,7 +210,7 @@ o	<span style="color:red; font-weight: bold;">Validation Result: Hypothesis conf
 
     - The client needs a dashboard
   
-- A successful project outcome for the customer is defined as
+- A successful project outcome for the client is defined as
 
     - an analysis that shows the variables most correlated with the sale price to help the client to *maximize the sale price* for houses inherited
 
@@ -222,10 +224,10 @@ o	<span style="color:red; font-weight: bold;">Validation Result: Hypothesis conf
     - The GitHub project board can be found here: **[GitHub Project Board](https://github.com/users/Werner-Staeblein/projects/27)**
     - EPICS are broken down as follows
 
-      - Information gathering and data collection.
-      - Data visualization, cleaning, and preparation.
-      - Model training, optimization and validation.
-      - Dashboard planning, designing, and development.
+      - Information gathering and data collection,
+      - Data visualization, cleaning, and preparation,
+      - Model training, optimization and validation,
+      - Dashboard planning, designing, and development,
       - Dashboard deployment and release.
 
 - Does the data suggest a particular model
@@ -250,9 +252,23 @@ o	<span style="color:red; font-weight: bold;">Validation Result: Hypothesis conf
     
 - How will the client benefit
 
-    - The client will maximize the sales price for the inherited properties
+    - The client will maximize the sales price for the inherited properties using a reliable model to determine the sale price for each house inherited
 
-## 6. Data Preprocessing
+
+## 7. **CRISP-DM**
+This project uses the CRISP-DM ("CRoss Industry Standard Process for Data Mining") process model to develop the data science process.
+
+| Process | Description |
+| --- | --- |
+| 1. Business Understanding: | understanding the objectives and requirements |
+| 2. Data Understanding | gather data, analyze it and identify opportunities |
+| 3. Data Preparation | prepare the data with the appropriate cleaning and engineering for modelling |
+| 4. Modelling | research and identify the structure of the model and build it |
+| 5. Evaluation | identify the best performing solution and assess if it meets the desired requirements |
+| 6. Deployment | move the application into production to allow users to take advantage of it |
+---
+
+## 7. Data Preprocessing
 
 ### Data Cleaning Pipeline
 
@@ -280,14 +296,13 @@ Further explanations on the analytical rationale to address the missing data in 
 
 **<span style="color:red;">Reminder: Encoding and Transformation of fetures to be included here**</span>
 
-## 7. Dashboard Design
+## 8. Dashboard Design
 
 ## Page 1: Quick Project Summary
 
   - Describe project key terms and jargon
   - Describe the project dataset
   - Describe the client's requirements | business requirements
-
 
 ## Page 2: Correlation Page
 
@@ -311,19 +326,21 @@ Further explanations on the analytical rationale to address the missing data in 
 - Display model performance
 - Display ML pipeline steps  
 
-## 8. Unfixed Bugs
+## 9. Unfixed Bugs
 
 * You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not valid reason to leave bugs unfixed.
 
-## 9. Deployment
+## 10. Deployment
 
 ### Heroku
 
+The project was deployed to Heroku
+
 * The App live link is: [**Heritage Housing Project**](https://housingappraisal-be85af0a7e82.herokuapp.com/)
 
-* Set the runtime.txt Python version to a **[Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes)** stack currently supported version.
-  
-* The project was deployed to Heroku using the following steps.
+* Set the runtime.txt Python version to a **[Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes)** stack currently supported version (3.8.19).
+
+Steps for deployment on Heroku are:
 
 1. Log in to Heroku and create an App
 2. At the Deploy tab, select GitHub as the deployment method.
@@ -332,7 +349,7 @@ Further explanations on the analytical rationale to address the missing data in 
 5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
 6. If the slug size is too large then add large files not required for the app to the .slugignore file.
 
-## 10. Packages and technologies used
+## 11. Packages and technologies used
                                                            
 ### Technologies used:
 
@@ -347,7 +364,7 @@ Further explanations on the analytical rationale to address the missing data in 
 **[Visual Studio Code](https://code.visualstudio.com/)** Visual Studio Code (VS-Code) was used as integrated development environment (IDE) for the entire project. The GitHub repository was cloned to VS-Code for this purpose	
 
 
-## Main Data Analysis and Machine Learning Libraries											
+### Main Data Analysis and Machine Learning Libraries											
 
 The version number of the libraries used can be found in the **[requirements file](https://github.com/Werner-Staeblein/Project-5/blob/main/requirements.txt)** of this project
 
