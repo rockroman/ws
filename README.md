@@ -22,7 +22,7 @@ This project aims to understand and predict house prices by analyzing various fa
   - [Page 2: Correlation Page](#page-2-correlation-page)
   - [Page 3: House Price Predictor Page](#page-3-house-price-predictor-page)
   - [Page 4: Hypothesis](#page-4-hypothesis)
-  - [Page 5: Technical Page](#page-5-technical-page)
+  - [Page 5: Technical Page | Model Performance Page](#page-5-technical-page--model-performance-page)
   - [8. Unfixed Bugs](#8-unfixed-bugs)
   - [9. Deployment](#9-deployment)
     - [Heroku](#heroku)
@@ -284,17 +284,20 @@ Further explanations on the analytical rationale to address the missing data in 
 
 ## Page 1: Quick Project Summary
 
-  - Describe the project dataset
-  - Describe the client's requirements
   - Describe project key terms and jargon
+  - Describe the project dataset
+  - Describe the client's requirements | business requirements
+
 
 ## Page 2: Correlation Page
 
-  - Show findings which features have the strongest correlation to house sale price
+  - Describe the business requirement No. 1
+  - Show findings which features have the strongest correlation to house sale price (most important features correlation)
   - Include visualisations of correlations with scatter plots of those variables that have a high correlation to the sale price. Enable dashboard user to analyze data visually
 
 ## Page 3: House Price Predictor Page
 
+- Describe business requirement No. 2
 - Display the 4 houses's attributes and their respective predicted sales price
 - Show information on the sum of predicted sales prices for all 4 inherited houses
 - Interactive widgets to allow a user to provide real-time house data to predict the sale price on a any given house
@@ -303,13 +306,10 @@ Further explanations on the analytical rationale to address the missing data in 
 
 - Display the project hypothesis and the hypothesis were validated across the project 
 
-## Page 5: Technical Page
+## Page 5: Technical Page | Model Performance Page
 
 - Display model performance
 - Display ML pipeline steps  
-
-
-* Eventually, during the project development, you may revisit your dashboard plan to update a given feature 
 
 ## 8. Unfixed Bugs
 
@@ -319,8 +319,9 @@ Further explanations on the analytical rationale to address the missing data in 
 
 ### Heroku
 
-* The App live link is: <https://YOUR_APP_NAME.herokuapp.com/>
-* Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
+* The App live link is: [**Heritage Housing Project**](https://housingappraisal-be85af0a7e82.herokuapp.com/)
+
+* Set the runtime.txt Python version to a **[Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes)** stack currently supported version.
   
 * The project was deployed to Heroku using the following steps.
 
@@ -348,13 +349,13 @@ Further explanations on the analytical rationale to address the missing data in 
 
 ## Main Data Analysis and Machine Learning Libraries											
 
-The version number of the libraries used can be found in the [requirements file](https://github.com/Werner-Staeblein/Project-5/blob/main/requirements.txt) of this project.
+The version number of the libraries used can be found in the **[requirements file](https://github.com/Werner-Staeblein/Project-5/blob/main/requirements.txt)** of this project.
 
 **[Jupiter Notebooks](https://jupyter.org/)** Open-source web app to create and share documents
                                                             
 **[Kaggle 1.6.12](https://pypi.org/project/kaggle/)** Tool for download of dataset from Kaggle
                                                             
-**[Matplotlib 3.4.3](https://matplotlib.org/)** Data visualisation library for correlation analysis															
+**[Matplotlib 3.4.3](https://matplotlib.org/)** Data visualisation library for correlation analysis and creation of plots													
                                                          
 **[Numpy 1.19.5](https://numpy.org/)** Library for computing, providing a collection of mathematical functions to work on arrays
 
