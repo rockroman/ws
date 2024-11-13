@@ -349,21 +349,30 @@ Further explanations on the analytical rationale to address the missing data in 
 
 ## Main Data Analysis and Machine Learning Libraries											
 
-The version number of the libraries used can be found in the **[requirements file](https://github.com/Werner-Staeblein/Project-5/blob/main/requirements.txt)** of this project.
+The version number of the libraries used can be found in the **[requirements file](https://github.com/Werner-Staeblein/Project-5/blob/main/requirements.txt)** of this project
 
-**[Jupiter Notebooks](https://jupyter.org/)** Open-source web app to create and share documents
-                                                            
+**[Feature Engine 1.0.2](https://feature-engine.trainindata.com/en/latest/)** Feature-engine is a Python library with multiple transformers to engineer and select features for machine learning models
+
+**[Jupiter Notebooks](https://jupyter.org/)** Open-source web app to create and share documents                                                  
 **[Kaggle 1.6.12](https://pypi.org/project/kaggle/)** Tool for download of dataset from Kaggle
-                                                            
+                                                     
 **[Matplotlib 3.4.3](https://matplotlib.org/)** Data visualisation library for correlation analysis and creation of plots													
                                                          
 **[Numpy 1.19.5](https://numpy.org/)** Library for computing, providing a collection of mathematical functions to work on arrays
 
-**[Pandas 1.3.5](https://pandas.pydata.org/)** Library for data manipulation and analysis with data structures to handle structured data.
+**[Pandas 1.3.5](https://pandas.pydata.org/)** Library to convert the source data into a DataFrame. Used for data management, data manipulation, and analysis of data structures
+
+**[Pandas Profiing](https://pypi.org/project/pandas-profiling/)** is a tool that generates detailed reports of DataFrame structure with information about feature type, distribution, missing values, and correlations. Used in data_cleaning and correlation_study
+
+**[Ppscore 1.2.0](https://pypi.org/project/ppscore/)** used to calculate relationships between feature pairs in the dataset and Predictive Power Score Analysis
 
 **[Python](https://www.python.org/)** Python is an interpreted, high-level and general purpose programming language
 
-**[Streamlit 1.34.0](https://streamlit.io/)** Open-source library to create and share we applications for machine learning and data science projects
+**[Seaborn 0.11.2](https://seaborn.pydata.org/)** Data visualization library. Used to prepare statistical graphs such as heatmaps. Library expands the functionalities of matplot-lib
+
+**[Scikit-learn 0.24.2](https://scikit-learn.org/stable/index.html)** used to train and evaluate the ML model. Training with Scikit-learn includes corss validation and hyperparameter optimisation to identify the best model and to determine the best parameters for model performance
+
+**[Streamlit 0.88.0](https://streamlit.io/)** Open-source library to create and share we applications for machine learning and data science projects. Used to create the dashboard to display separate pages of the project and interactive page with widgets for prediction of a house sale price
 
 ## Credits
 
