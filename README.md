@@ -189,7 +189,26 @@ o	<span style="color:red; font-weight: bold;">Validation Result: Hypothesis conf
 ## 5. ML Business Case
 
 * Frame the business case using the method we covered in the course.
+
+- Business requirements:
+
+    - The client wants to know how house attributes correlate with sale price. The client expects data visualisations of correlated features with the sale price
+    - The client wants to predict house sales prices for the 4 inherited houses. In addition, the client want to prdict house sale price for other houses in Ames, Iowa
+
+- Can traditional data analysis be used:
+
+    - The client could approximate the sale prices of houses inherited by drawing inferences from the datapoints in the dataset for houses with similar features. This approach may, however, lead to inaccuracies and is very subjective
+
+- Does the customer need a dashboard or API?
+
+    - The client needs a dashboard
+
+
+
+
+
 * Use the proper ML terminology such as labels, targets, features, variables, train
+
 * ML pipeline to include the regressor model and live data data to estimate sales prices through input widgets
 
 ## 6. Data Preprocessing
