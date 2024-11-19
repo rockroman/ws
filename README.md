@@ -408,6 +408,7 @@ The following functions from walkthrough project 2 were used in the project
 * custom class HyperparameterOptimizationSearch from CI walkthrough project
 * function PipelineOptimization() from CI walkthrough project
 
+
 The following resources were used to better understand the different steps of the ML pipeline or statistical concepts
 
 **[ML-Mastery](https://machinelearningmastery.com/feature-relationships-101/)** This article provided me a good overview over the relationships
