@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.metrics import r2_score
 from src.data_management import load_ames_data, load_pkl_file
-
+from src.machine_learning.function_predict_saleprice import load_pkl_file
+from src.machine_learning.function_ml_performance import regression_performance, regression_evaluation
 
 def ml_price_prediction_page():
     """
