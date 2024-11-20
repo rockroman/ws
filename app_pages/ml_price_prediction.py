@@ -31,4 +31,4 @@ def ml_price_prediction_page():
         f"* The pipeline steps, best features determined, feature importance plot, pipeline performance and regression performance are shown below. "
        )
     st.write("---")
-
+    
