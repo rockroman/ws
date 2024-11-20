@@ -338,9 +338,9 @@ The code price_pipe = load_pkl_file(f"outputs/ml_pipeline/predict_price/v4/regre
 
 I tried
 
- - changing the name of .pkl and dumping it under a different name to see if the .pkl is properly retrieved in streamlit using the evaluate_reg.py sitting in machine_learning folder
- - deleted the evaluate_reg.py file and recreated this file again including its functions
- - tried to get access to regression_pipeline.pkl to see its content
+ - changing the name of .pkl and dumping it under a different name to see if the .pkl is properly retrieved in streamlit using the (fail)evaluate_reg.py sitting in machine_learning folder (fail)
+ - deleted the evaluate_reg.py file and recreated this file again including its functions (fail)
+ - tried to get access to regression_pipeline.pkl to see its content (not accessible or readable format)
  - added another dump of the regression_pipeline.pkl file at the end of the 05_ml_notebook 
 
 ```python
@@ -352,7 +352,18 @@ file_name = os.path.join(file_path, 'regression_pipeline.pkl')
 joblib.dump(best_pipeline_regressor, file_name)
 ```
 
+- Copied and added the streamlit code from CI walkthrough again to see if results in streamlit is identical to notebook 05_ml (failed again)
+- cleared all content inside evaluate_reg.py and ml_price_prediction.py files and started again from scratch (watching the CI videos including
+reading out loud the functions and code used there before copying to newly created content inside evaluate_reg.py and ml_price_prediciton.py)
 
+With the steps above the following was achieved:
+
+- The ml_price_prediction.py (streamlit page from app_pages) correctly shows the regression performance plots and 5 most important features,
+completely in line with outcome/results achived in notebook named 05_ml_model_and_evaluation.ipynb
+
+- The key pipeline metrics such as MAE, R2, MSE, RMSE are still not identical with those values shown in the jupyter notebook (ensured now that the regression_pipeline.pkl was dumped twice in my notebook to be retrieved in streamlit app)
+
+- interim conclusion: either the values shown in the jupyter notebook are wrong or the values shown in the streamlit app are wrong
 
 
 ## 10. Deployment
