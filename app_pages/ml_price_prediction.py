@@ -4,9 +4,19 @@ import joblib
 import os
 import matplotlib.pyplot as plt
 from src.data_management import load_ames_data, load_pkl_file
-from src.machine_learning.evaluate_reg import regression_performance, regression_evaluation, regression_evaluation_plots
+from src.machine_learning.evaluate_reg import model_performance, pipeline_results
 
-st.write(f"Does the directory exist? {os.path.isdir('outputs/ml_pipeline/predict_price/v4')}")
+
+def load_pkl_file(file_path):
+    """
+    Loads a pickled file (model) using joblib from the given file path.
+    """
+    try:
+        model = joblib.load(file_path)
+        return model
+    except Exception as e:
+        print(f"Error loading model from {file_path}: {e}")
+        return None
 
 
 def ml_price_prediction_page():
@@ -16,13 +26,14 @@ def ml_price_prediction_page():
     """
     # load price pipeline files
     version = 'v4'
-    price_pipe = load_pkl_file(f"outputs/ml_pipeline/predict_price/{version}/regression_pipeline.pkl")
-    price_feat_importance = plt.imread(f"outputs/ml_pipeline/predict_price/{version}/features_importance.png")
-    X_train = pd.read_csv(f"outputs/ml_pipeline/predict_price/{version}/X_train.csv")
-    X_test = pd.read_csv(f"outputs/ml_pipeline/predict_price/{version}/X_test.csv")
-    y_train =  pd.read_csv(f"outputs/ml_pipeline/predict_price/{version}/y_train.csv")
-    y_test =  pd.read_csv(f"outputs/ml_pipeline/predict_price/{version}/y_test.csv")
+    price_pipe = load_pkl_file(f"outputs/ml_pipeline/predict_price/v4/regression_pipeline.pkl")
+    price_feat_importance = plt.imread(f"outputs/ml_pipeline/predict_price/v4/features_importance.png")
+    X_train = pd.read_csv(f"outputs/ml_pipeline/predict_price/v4/X_train.csv")
+    X_test = pd.read_csv(f"outputs/ml_pipeline/predict_price/v4/X_test.csv")
+    y_train =  pd.read_csv(f"outputs/ml_pipeline/predict_price/v4/y_train.csv")
+    y_test =  pd.read_csv(f"outputs/ml_pipeline/predict_price/v4/y_test.csv")
 
+ 
  
     st.write("### ML Pipeline: Predict House Price")    
         
@@ -55,19 +66,9 @@ def ml_price_prediction_page():
     st.image(price_feat_importance)
     st.write("---")
 
-
-    # Displaying the pipeline performance
+    # Evaluate performance on both sets
     st.write("### Pipeline Performance")
-    st.write("##### Performance goal of the predictions:\n")
-    st.write("* We agreed with the client an R2 score of at least 0.75 on the train set as well as on the test set.")
-    st.write(f"* Our ML pipeline performance shows that our model performance metrics have been successfully satisfied.")
-
-    # Perform performance evaluation
-    regression_performance(X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test, pipeline=price_pipe)
-
-    # Display the regression performance plots
-    st.write("### Regression Performance Plots")
-    st.write("* The regression performance plots below indicate that our model, in most part, is able to predict sale prices well. The model looks less effective for houses with high prices though.")
-
-    # Show the regression evaluation plots
-    regression_evaluation_plots(X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test, pipeline=price_pipe)
+    model_performance(X_train=X_train, y_train=y_train,
+                      X_test=X_test, y_test=y_test,
+                      pipeline=price_pipe)
+    
