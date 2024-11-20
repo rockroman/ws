@@ -1,9 +1,13 @@
 import streamlit as st
 import pandas as pd
+import joblib
+import os
 import matplotlib.pyplot as plt
 from src.data_management import load_ames_data, load_pkl_file
-from src.machine_learning.function_predict_saleprice import load_pkl_file
-from src.machine_learning.function_ml_performance import regression_performance, regression_evaluation
+from src.machine_learning.evaluate_reg import regression_performance, regression_evaluation, regression_evaluation_plots
+
+st.write(f"Does the directory exist? {os.path.isdir('outputs/ml_pipeline/predict_price/v4')}")
+
 
 def ml_price_prediction_page():
     """
@@ -52,5 +56,18 @@ def ml_price_prediction_page():
     st.write("---")
 
 
+    # Displaying the pipeline performance
     st.write("### Pipeline Performance")
+    st.write("##### Performance goal of the predictions:\n")
+    st.write("* We agreed with the client an R2 score of at least 0.75 on the train set as well as on the test set.")
+    st.write(f"* Our ML pipeline performance shows that our model performance metrics have been successfully satisfied.")
 
+    # Perform performance evaluation
+    regression_performance(X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test, pipeline=price_pipe)
+
+    # Display the regression performance plots
+    st.write("### Regression Performance Plots")
+    st.write("* The regression performance plots below indicate that our model, in most part, is able to predict sale prices well. The model looks less effective for houses with high prices though.")
+
+    # Show the regression evaluation plots
+    regression_evaluation_plots(X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test, pipeline=price_pipe)

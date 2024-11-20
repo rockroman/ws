@@ -12,13 +12,13 @@ def regression_performance(X_train, y_train, X_test, y_test,pipeline):
 	st.info("* Test Set")
 	regression_evaluation(X_test,y_test,pipeline)
 
-def regression_evaluation(X,y,pipeline):
-  prediction = pipeline.predict(X)
-  st.write('Mean Absolute Error:', mean_absolute_error(y, prediction).round(3))  
-  st.write('R2 Score:', r2_score(y, prediction).round(3))  
-  st.write('Mean Squared Error:', mean_squared_error(y, prediction).round(3))  
-  st.write('Root Mean Squared Error:', np.sqrt(mean_squared_error(y, prediction)).round(3))
-  st.write("\n")
+def regression_evaluation(X, y, pipeline):
+    prediction = pipeline.predict(X)
+    st.write('Mean Absolute Error:', float(mean_absolute_error(y, prediction)).round(3))
+    st.write('R2 Score:', float(r2_score(y, prediction)).round(3))
+    st.write('Mean Squared Error:', float(mean_squared_error(y, prediction)).round(3))
+    st.write('Root Mean Squared Error:', float(np.sqrt(mean_squared_error(y, prediction))).round(3))
+    st.write("\n")
 
 def regression_evaluation_plots(X_train, y_train, X_test, y_test,pipeline, alpha_scatter=0.5):
   pred_train = pipeline.predict(X_train)
