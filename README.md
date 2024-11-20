@@ -405,8 +405,11 @@ The following functions from walkthrough project 2 were used in the project
 * Functions heatmap_corr(), heatmap_pps(), CalculateCorrAndPPS(), and DisplayCorrAndPPS() taken from CI ProdictePowerScore Unit1: Introduction, Video No. 6
 * Functions to create plots (inside 03_correlation_study.ipynb) taken from walktrhough project 2 (churned customer study)
 * Feature engineering custom function taken from CI feature engine unit 9: custom functions
-* custom class HyperparameterOptimizationSearch from CI walkthrough project
-* function PipelineOptimization() from CI walkthrough project
+* Custom class HyperparameterOptimizationSearch from CI walkthrough project
+* The rain_test_split() function from CI Scikit-Learn Unit 3
+* Function pipeline_linear_regression() from CI Scikit-Learn Unit 3
+* Evaluation of regressor pipeline (regression_performance(), regression_evaluation(), regression_evaluation_pluts() from CI Scikit-Learn Unit 3)
+* Function PipelineOptimization() with multiple optimizations from CI walkthrough project and CI Scikit-Learn Unit 6
 
 
 The following resources were used to better understand the different steps of the ML pipeline or statistical concepts
