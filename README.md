@@ -191,6 +191,7 @@ o	<span style="color:red; font-weight: bold;">Validation Result: Hypothesis conf
 
 - The target variable (house price) is continuous. Therefore, a regression analysis is conducted to address the business requirement. If a regression model proves to perform poorly on required metrics, a classification analysis can be done
 - The business requirement is addressed in this notebook: **[ML Modeling](jupyter_notebooks\05_ml_model_and_evaluation.ipynb)**
+- The ML task will be to forecast house sale prices based on attributes of houses provided. The ML task is achieved by using the key features determined such as OverallQual, GrLivArea or GarageArea
 
 
 ## 5. ML Business Case
