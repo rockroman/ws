@@ -53,7 +53,7 @@ def sales_price_prediction_page():
 
 def load_ames_data():
     try:
-        df = pd.read_csv("outputs/datasets/collection/house_prices.csv")
+        df = pd.read_csv("jupyter_notebooks/outputs/datasets/collection/house_prices.csv")
         st.write("Columns in the dataset:", df.columns)
         st.write("First few rows of the dataset:", df.head())
         return df
