@@ -52,7 +52,6 @@ def sales_price_prediction_page():
     )
 
 
-
 def load_ames_data():
     try:
         df = pd.read_csv("jupyter_notebooks/outputs/datasets/collection/house_prices.csv")
@@ -62,7 +61,6 @@ def load_ames_data():
     except Exception as e:
         st.error(f"Error loading dataset: {e}")
         return pd.DataFrame()
-    
     
     
 def DrawInputsWidgets():
