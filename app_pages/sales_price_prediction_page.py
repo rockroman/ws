@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
-from src.data_management import load_inherited_houses_data, load_pkl_file
+from datetime import date
+from src.data_management import load_inherited_houses_data, load_pkl_file, load_ames_data
 from src.machine_learning.predictive_analysis_functions import predict_inherited_house_price, predict_price
 
 def sales_price_prediction_page():
@@ -48,3 +49,83 @@ def sales_price_prediction_page():
              f" EXPLANATION / EXPLANATION "
              f" EXPLANATION / EXPLANATION"
     )
+
+
+def load_ames_data():
+    df = pd.read_csv("outputs/datasets/collection/house_prices.csv")
+    st.write("Columns in the dataset:", df.columns)
+    return df
+
+
+def create_input_widgets():
+    
+    df1 = load_ames_data()
+    st.write(df1.head())
+    if df1.empty:
+        st.error("The dataset is empty!")
+    return pd.DataFrame()
+
+    percentageMin, percentageMax = 0.4, 2.0
+    col1, col2, col3, col4, col5 = st.columns(5)
+
+    # Create an empty DataFrame to hold input data
+    X_live = pd.DataFrame([], index=[0])
+
+    # Create widgets for the 5 features
+    with col1:
+        feature = "OverallQual"
+        st_widget = st.number_input(
+            label=feature,
+            min_value=1,
+            max_value=10,
+            value=int(df1[feature].median()), 
+            step=1
+        )
+        X_live[feature] = st_widget
+
+    with col2:
+        feature = "GrLivArea"
+        st_widget = st.number_input(
+            label=feature,
+            min_value=int(df1[feature].min() * percentageMin),
+            max_value=int(df1[feature].max() * percentageMax),  
+            value=int(df1[feature].median()),
+            step=100
+        )
+        X_live[feature] = st_widget
+
+    with col3:
+        feature = "GarageArea"
+        st_widget = st.number_input(
+            label=feature,
+            min_value=int(df1[feature].min() * percentageMin),
+            max_value=int(df1[feature].max() * percentageMax),
+            value=int(df1[feature].median()),
+            step=50
+        )
+        X_live[feature] = st_widget
+
+    with col4:
+        feature = "YearBuilt"
+        st_widget = st.number_input(
+            label=feature,
+            min_value=int(df1[feature].min() * percentageMin),
+            max_value=2024, 
+            value=int(df1[feature].median()),
+            step=1
+        )
+        X_live[feature] = st_widget
+
+    with col5:
+        feature = "TotalBsmtSF"
+        st_widget = st.number_input(
+            label=feature,
+            min_value=int(df1[feature].min() * percentageMin),
+            max_value=int(df1[feature].max() * percentageMax),
+            value=int(df1[feature].median()),
+            step=50
+        )
+        X_live[feature] = st_widget
+    
+
+    return X_live
