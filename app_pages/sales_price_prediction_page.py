@@ -50,82 +50,114 @@ def sales_price_prediction_page():
              f" EXPLANATION / EXPLANATION"
     )
 
-
+@st.cache
 def load_ames_data():
-    df = pd.read_csv("outputs/datasets/collection/house_prices.csv")
-    st.write("Columns in the dataset:", df.columns)
-    return df
-
-
-def create_input_widgets():
+    try:
+        df = pd.read_csv("outputs/datasets/collection/house_prices.csv")
+        st.write("Columns in the dataset:", df.columns)
+        st.write("First few rows of the dataset:", df.head())
+        return df
+    except Exception as e:
+        st.error(f"Error loading dataset: {e}")
+        return pd.DataFrame()
     
-    df1 = load_ames_data()
-    st.write(df1.head())
-    if df1.empty:
-        st.error("The dataset is empty!")
-    return pd.DataFrame()
+    
+    
+def DrawInputsWidgets():
+    
+    # df = load_ames_data()
+    # if df.empty:
+    #     st.error("Dataset is empty or could not be loaded.")
+    #     return
+
+    df = pd.read_csv("test_data.csv")
+    st.write(df.head())
+
+    
+    df.fillna(df.median(), inplace=True)
 
     percentageMin, percentageMax = 0.4, 2.0
+
+    # List of top features to show in widgets
+    top_features = ["OverallQual", "GrLivArea", "TotalBsmtSF", "YearBuilt", "1stFlrSF"]
+    
+    # Create columns for the input widgets
     col1, col2, col3, col4, col5 = st.columns(5)
 
-    # Create an empty DataFrame to hold input data
+    # Create empty DataFrame for live data
     X_live = pd.DataFrame([], index=[0])
 
-    # Create widgets for the 5 features
+    # Draw the widgets for each feature
     with col1:
-        feature = "OverallQual"
-        st_widget = st.number_input(
-            label=feature,
-            min_value=1,
-            max_value=10,
-            value=int(df1[feature].median()), 
-            step=1
-        )
-        X_live[feature] = st_widget
+        feature = top_features[0]
+        if feature in df.columns:
+            st_widget = st.number_input(
+                label=feature,
+                min_value=df[feature].min() * percentageMin,
+                max_value=df[feature].max() * percentageMax,
+                value=df[feature].median()
+            )
+            X_live[feature] = st_widget
+        else:
+            st.error(f"Feature '{feature}' not found in the dataset.")
 
     with col2:
-        feature = "GrLivArea"
-        st_widget = st.number_input(
-            label=feature,
-            min_value=int(df1[feature].min() * percentageMin),
-            max_value=int(df1[feature].max() * percentageMax),  
-            value=int(df1[feature].median()),
-            step=100
-        )
-        X_live[feature] = st_widget
+        feature = top_features[1]
+        if feature in df.columns:
+            st_widget = st.number_input(
+                label=feature,
+                min_value=df[feature].min() * percentageMin,
+                max_value=df[feature].max() * percentageMax,
+                value=df[feature].median()
+            )
+            X_live[feature] = st_widget
+        else:
+            st.error(f"Feature '{feature}' not found in the dataset.")
 
     with col3:
-        feature = "GarageArea"
-        st_widget = st.number_input(
-            label=feature,
-            min_value=int(df1[feature].min() * percentageMin),
-            max_value=int(df1[feature].max() * percentageMax),
-            value=int(df1[feature].median()),
-            step=50
-        )
-        X_live[feature] = st_widget
+        feature = top_features[2]
+        if feature in df.columns:
+            st_widget = st.number_input(
+                label=feature,
+                min_value=df[feature].min() * percentageMin,
+                max_value=df[feature].max() * percentageMax,
+                value=df[feature].median()
+            )
+            X_live[feature] = st_widget
+        else:
+            st.error(f"Feature '{feature}' not found in the dataset.")
 
     with col4:
-        feature = "YearBuilt"
-        st_widget = st.number_input(
-            label=feature,
-            min_value=int(df1[feature].min() * percentageMin),
-            max_value=2024, 
-            value=int(df1[feature].median()),
-            step=1
-        )
-        X_live[feature] = st_widget
+        feature = top_features[3]
+        if feature in df.columns:
+            st_widget = st.number_input(
+                label=feature,
+                min_value=df[feature].min() * percentageMin,
+                max_value=df[feature].max() * percentageMax,
+                value=df[feature].median()
+            )
+            X_live[feature] = st_widget
+        else:
+            st.error(f"Feature '{feature}' not found in the dataset.")
 
     with col5:
-        feature = "TotalBsmtSF"
-        st_widget = st.number_input(
-            label=feature,
-            min_value=int(df1[feature].min() * percentageMin),
-            max_value=int(df1[feature].max() * percentageMax),
-            value=int(df1[feature].median()),
-            step=50
-        )
-        X_live[feature] = st_widget
-    
+        feature = top_features[4]
+        if feature in df.columns:
+            st_widget = st.number_input(
+                label=feature,
+                min_value=df[feature].min() * percentageMin,
+                max_value=df[feature].max() * percentageMax,
+                value=df[feature].median()
+            )
+            X_live[feature] = st_widget
+        else:
+            st.error(f"Feature '{feature}' not found in the dataset.")
 
     return X_live
+
+
+if __name__ == "__main__":
+    X_live = DrawInputsWidgets()
+    if not X_live.empty:
+        st.write("Live Data from Widgets:")
+        st.write(X_live)
