@@ -161,3 +161,4 @@ if __name__ == "__main__":
     if not X_live.empty:
         st.write("Live Data from Widgets:")
         st.write(X_live)
+
