@@ -404,6 +404,7 @@ The following functions from walkthrough project 2 were used in the project
 * DataCleaningEffect function from under the heading "Data Cleaning"
 * Functions heatmap_corr(), heatmap_pps(), CalculateCorrAndPPS(), and DisplayCorrAndPPS() taken from CI ProdictePowerScore Unit1: Introduction, Video No. 6
 * Functions to create plots (inside 03_correlation_study.ipynb) taken from walktrhough project 2 (churned customer study)
+* Functions in correlation_analysis_page.py such as heatmap_corr(), heatmap_pps(), CalculateCorrAndPPS(), DisplayCorrAndPPS() from walkthrough project
 * Feature engineering custom function taken from CI feature engine unit 9: custom functions
 * Custom class HyperparameterOptimizationSearch from CI walkthrough project
 * The rain_test_split() function from CI Scikit-Learn Unit 3
