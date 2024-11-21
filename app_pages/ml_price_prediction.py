@@ -46,7 +46,7 @@ def ml_price_prediction_page():
              for at least 0.75 accuracy in predicting the sales price of a property with a set of\
                  attributes. \n"
         f"* The pipeline performance for the best model on the train and test set is\
-             R2 = 0.84 and R2 = 0.77 respectively.\n"
+             R2 = 0.88 and R2 = 0.79 respectively.\n"
         f"* We present the pipeline steps, best features list along with feature importance plot, pipeline performance and regression performance report below. "
        )
     st.write("---")
@@ -75,8 +75,9 @@ def ml_price_prediction_page():
     # Display the regression performance plot
     st.write("### Regression Performance Plots")
     st.write(
-    "* The regression performance plots below indicate that our model, "
-    "in most part, is able to predict sale prices well. The model looks less effective for houses with high prices though."
+    "* The regression performance plots below indicate that the model with the best features, "
+    "can predict sale prices well. For houses with higher prices, the model does however"
+    "look to be less dependable"
     )
 
     # Path to the image
