@@ -50,7 +50,7 @@ def sales_price_prediction_page():
              f" EXPLANATION / EXPLANATION"
     )
 
-@st.cache
+
 def load_ames_data():
     try:
         df = pd.read_csv("outputs/datasets/collection/house_prices.csv")
@@ -65,10 +65,10 @@ def load_ames_data():
     
 def DrawInputsWidgets():
     
-    # df = load_ames_data()
-    # if df.empty:
-    #     st.error("Dataset is empty or could not be loaded.")
-    #     return
+    df = load_ames_data()
+    if df.empty:
+         st.error("Dataset is empty or could not be loaded.")
+         return
 
     df = pd.read_csv("test_data.csv")
     st.write(df.head())
