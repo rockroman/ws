@@ -10,10 +10,12 @@ def sales_price_prediction_page():
     # Load the files for prediction
     version = 'v4'
     regression_pipe = load_pkl_file(f"outputs/ml_pipeline/predict_price/{version}/regression_pipeline.pkl")
-    house_features = (pd.read_csv(f"outputs/ml_pipeline/predict_price/{version}/X_train.csv")
-                     .columns
-                     .to_list())
-    
+    house_features = (
+        pd.read_csv(f"outputs/ml_pipeline/predict_price/{version}/X_train.csv")
+        .columns
+        .to_list()
+    )
+
     # I determined the following 5 most important features
     important_features = ['OverallQual', 'GrLivArea', 'GarageArea', 'YearBuilt', 'TotalBsmtSF']
 
@@ -35,7 +37,7 @@ def sales_price_prediction_page():
 
     for i in range(X_inherited.shape[0]):
         # Prediction of sale price for each house
-        pprice = predict_inherited_house_price(X_inherited.iloc[[i,]], important_features, regression_pipe)
+        pprice = predict_inherited_house_price(X_inherited.iloc[[i, ]], important_features, regression_pipe)
         predicted_sale_price.append(round(pprice))
         summed_price += pprice
 
@@ -46,10 +48,11 @@ def sales_price_prediction_page():
 
     # Display the predictions
     st.write(X_inherited.head())
-    st.write(f"* Summed price: **${summed_price}** \n"
-             f"* Features used: **{X_inherited.columns.to_list()}**.\n"
-             f" EXPLANATION / EXPLANATION "
-             f" EXPLANATION / EXPLANATION"
+    st.write(
+        f"* Summed price: **${summed_price}** \n"
+        f"* Features used: **{X_inherited.columns.to_list()}**.\n"
+        f" EXPLANATION / EXPLANATION "
+        f" EXPLANATION / EXPLANATION"
     )
 
     # Widget to predict price for any house in the area based on impportant features
@@ -68,6 +71,3 @@ def sales_price_prediction_page():
         )
 
     st.write("---")
-
-
-
