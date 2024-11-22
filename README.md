@@ -20,7 +20,7 @@ This project aims to understand and predict house prices by analyzing various fa
     - [Data Cleaning Pipeline](#data-cleaning-pipeline)
     - [Feature Engineering](#feature-engineering)
   - [8. Dashboard Design](#8-dashboard-design)
-  - [Page 1: Quick Project Summary](#page-1-quick-project-summary)
+  - [Page 1: Quick Project Summary | Opening Page of the Dashboard](#page-1-quick-project-summary--opening-page-of-the-dashboard)
   - [Page 2: Correlation Page](#page-2-correlation-page)
   - [Page 3: House Price Predictor Page](#page-3-house-price-predictor-page)
   - [Page 4: Hypothesis](#page-4-hypothesis)
@@ -299,11 +299,42 @@ Further explanations on the analytical rationale to address the missing data in 
 
 ## 8. Dashboard Design
 
-## Page 1: Quick Project Summary
+## Page 1: Quick Project Summary | Opening Page of the Dashboard
 
-  - Describe project key terms and jargon
-  - Describe the project dataset
-  - Describe the client's requirements | business requirements
+This page shows a summary of
+ 
+<details>
+<summary> Key terms and jargon used in the project</summary>
+
+* **Sale price** is the market price of a house with features represented by the list of features for the respective house. 
+* **inherited house** is a house that the client inherited from grandparents that needs evaluation of market price
+* **summed price** is total sum of all predicted market prices of all four houses that the client inherited
+</details>
+ 
+<details>
+<summary> The project dataset</summary>
+
+* The project is based on a dataset of housing prices from Ames, Iowa.
+* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/housing-prices-data).
+* The dataset includes sales price (the target to be predicted) and features for each house such as age (year built, year remodeled), size (first floor area, second floor area, garaze area) and quality
+</details>
+ 
+<details>
+<summary> The business requirements</summary>
+
+The project has 2 business requirements:
+
+* **BR1** - The client is interested in discovering how the house attributes correlate with the sale price in the Ames, Iowa, region. Therefore, the client expects **data visualisations** of the **correlated variables** against the sale price to show that.
+
+* **BR2** - The client is interested in predicting the house sale price from her four inherited houses, and any other house in Ames, Iowa.
+</details>
+
+<details>
+<summary>Page 1: Project Overview (Screenshot)</summary>
+
+<img src="docs/readmescreenshots/project_overview_page.png">
+</details>
+
 
 ## Page 2: Correlation Page
 
@@ -393,12 +424,9 @@ The version number of the libraries used can be found in the **[requirements fil
 
 ## Credits
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
-* You can break the credits section up into Content and Media, depending on what you have included in your project.
-
 ### Code
 
-The following functions from walkthrough project 2 were used in the project
+The following functions from CI training videos on ML and walkthrough project 2 were used in the project:
 
 * Evaluate MissingData funciton from under the heading "Data Cleaning" and "Assessing Missing Data Levels"
 * DataCleaningEffect function from under the heading "Data Cleaning"
@@ -424,7 +452,6 @@ the underlying project goal
 
 ### Content
 
-* The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
 
 ### Media
 
