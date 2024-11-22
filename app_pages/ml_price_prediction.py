@@ -22,11 +22,11 @@ def load_pkl_file(file_path):
 def ml_price_prediction_page():
     """
     Displays ML pipeline, feature importance and ML and regression
-    performance plots 
+    performance plots
     """
     """
     Displays ML pipeline, feature importance and ML and regression
-    performance plots 
+    performance plots
     """
     # load price pipeline files
     version = 'v4'
@@ -34,12 +34,10 @@ def ml_price_prediction_page():
     price_feat_importance = plt.imread(f"outputs/ml_pipeline/predict_price/{version}/features_importance.png")
     X_train = pd.read_csv(f"outputs/ml_pipeline/predict_price/{version}/X_train.csv")
     X_test = pd.read_csv(f"outputs/ml_pipeline/predict_price/{version}/X_test.csv")
-    y_train =  pd.read_csv(f"outputs/ml_pipeline/predict_price/{version}/y_train.csv")
-    y_test =  pd.read_csv(f"outputs/ml_pipeline/predict_price/{version}/y_test.csv")
+    y_train = pd.read_csv(f"outputs/ml_pipeline/predict_price/{version}/y_train.csv")
+    y_test = pd.read_csv(f"outputs/ml_pipeline/predict_price/{version}/y_test.csv")
 
- 
-
-    st.write("### ML Pipeline: Predict House Price")    
+    st.write("### ML Pipeline: Predict House Price")
     # display pipeline training summary conclusions
     st.info(
         f"* To answer the BR2, a Regressor model was trained and the pipeline tuned aiming \
@@ -62,22 +60,23 @@ def ml_price_prediction_page():
     st.image(price_feat_importance)
     st.write("---")
 
-
     st.write("### Pipeline Performance")
     st.write("##### Performance goal of the predictions:\n")
     st.write("* We agreed with the client an R2 score of at least 0.75 on the train set as well as on the test set.")
     st.write(f"* Our ML pipeline performance shows that our model performance\
          metrics have been successfully satisfied.")
-    regression_performance(X_train=X_train, y_train=y_train,
-                        X_test=X_test, y_test=y_test,
-                        pipeline=price_pipe) 
+    regression_performance(
+        X_train=X_train, y_train=y_train,
+        X_test=X_test, y_test=y_test,
+        pipeline=price_pipe
+    )
 
     # Display the regression performance plot
     st.write("### Regression Performance Plots")
     st.write(
-    "* The regression performance plots below indicate that the model with the best features, "
-    "can predict sale prices well. For houses with higher prices, the model does however"
-    "look to be less dependable"
+        "* The regression performance plots below indicate that the model with the "
+        "best features can predict sale prices well. For houses with higher prices, "
+        "the model does, however, look to be less dependable"
     )
 
     # Path to the image
