@@ -22,6 +22,7 @@ This project aims to understand and predict house prices by analyzing various fa
   - [8. Dashboard Design](#8-dashboard-design)
   - [Page 1: Quick Project Summary | Opening Page of the Dashboard](#page-1-quick-project-summary--opening-page-of-the-dashboard)
   - [Page 2: Correlation Page](#page-2-correlation-page)
+      - [Target Analysis](#target-analysis)
   - [Page 3: House Price Predictor Page](#page-3-house-price-predictor-page)
   - [Page 4: Hypothesis](#page-4-hypothesis)
   - [Page 5: Technical Page | Model Performance Page](#page-5-technical-page--model-performance-page)
@@ -338,9 +339,67 @@ The project has 2 business requirements:
 
 ## Page 2: Correlation Page
 
-  - Describe the business requirement No. 1
-  - Show findings which features have the strongest correlation to house sale price (most important features correlation)
-  - Include visualisations of correlations with scatter plots of those variables that have a high correlation to the sale price. Enable dashboard user to analyze data visually
+**<span style="color:red;">Reminder: Remove 3 bullet points marked with [Done] once correlation page checked for final/final**</span>
+
+  - Describe the business requirement No. 1 [DONE]
+  - Show findings which features have the strongest correlation to house sale price (most important features correlation) [DONE]
+  - Include visualisations of correlations with scatter plots of those variables that have a high correlation to the sale price. Enable dashboard user to analyze data visually [DONE]
+
+
+This page shows
+* the business requirement that was handled by the BR1 (correlation study)
+* a checkbox that displays the dataset ("Inspect house data from the area")
+* analytical conclusions about the features that have strongest correlation with the target (house sale price)
+
+* a checkbox for displaying plots of sale price and each of the features that have strong correlation. This section of the page displays:
+  * the distribution of the target variable (sale price)
+  * regression plots of sale price and each of the continuous numerical features
+  * box plots of sale price and each of the categorical features
+  * line graphs of sale price and each of the time variables
+  * heatmaps showing correlations
+
+<details>
+<summary>Pearson Correlation Heatmap</summary>
+<img src="docs/plots/heatmap_corr_pearson.png">
+</details>
+
+<details>
+<summary>Spearman Correlation Heatmap</summary>
+<img src="docs/plots/heatmap_corr_spearman.png">
+</details>
+
+<details>
+<summary> PPS Heatmap</summary>
+<img src="docs/plots/heatmap_pps.png">
+</details>
+
+#### Target Analysis
+
+SalePrice is the target variable. The distribution of the target variable is studied with a histogram. 
+
+![Histogram of SalePrice target variable](docs/plots/hist_plot_SalePrice.png)
+
+The features most correlated with the target are analysed further. To analyse the relationships between
+SalePrice and each (important) created different types of plots
+
+- Features with continuous values displayed in a scatter plot
+- Features with categorical values displayed in a box plot
+- Features with time values displayed in a line plot
+
+<details>
+<summary>Click here to see the different plots</summary>
+<img src="docs/plots/lm_plot_price_by_1stFlrSF.png">
+<img src="docs/plots/lm_plot_price_by_GarageArea.png">
+<img src="docs/plots/lm_plot_price_by_GarageYrBlt.png">
+<img src="docs/plots/lm_plot_price_by_GrLivArea.png">
+<img src="docs/plots/box_plot_price_by_KitchenQual.png">
+<img src="docs/plots/box_plot_price_by_OverallQual.png">
+<img src="docs/plots/lm_plot_price_by_TotalBsmtSF.png">
+<img src="docs/plots/line_plot_price_by_YearBuilt.png">
+<img src="docs/plots/line_plot_price_by_YearRemodAdd.png">
+</details>
+
+
 
 ## Page 3: House Price Predictor Page
 
