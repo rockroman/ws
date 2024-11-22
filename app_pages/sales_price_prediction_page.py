@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 from datetime import date
 from src.data_management import load_inherited_houses_data, load_pkl_file, load_ames_data
 from src.machine_learning.predictive_analysis_functions import predict_inherited_house_price, predict_price
@@ -12,8 +13,8 @@ def sales_price_prediction_page():
     house_features = (pd.read_csv(f"outputs/ml_pipeline/predict_price/{version}/X_train.csv")
                      .columns
                      .to_list())
-
-    # The 5 most important features determined are:
+    
+    # I determined the following 5 most important features
     important_features = ['OverallQual', 'GrLivArea', 'GarageArea', 'YearBuilt', 'TotalBsmtSF']
 
     st.write("### Predicting sales price of inherited houses (BR2)")
@@ -25,7 +26,7 @@ def sales_price_prediction_page():
     # Load the inherited houses data
     X_inherited = load_inherited_houses_data()
 
-    # Reduce inherited houses data down to only the important features
+    # Reduce inherited houses data down to only the important features listed above
     X_inherited = X_inherited[important_features]
 
     # Predict the sale price for each house
@@ -51,114 +52,22 @@ def sales_price_prediction_page():
              f" EXPLANATION / EXPLANATION"
     )
 
+    # Widget to predict price for any house in the area based on impportant features
+    st.subheader("Enter the house details to predict the potential price:")
 
-def load_ames_data():
-    try:
-        df = pd.read_csv("jupyter_notebooks/outputs/datasets/collection/house_prices.csv")
-        st.write("Columns in the dataset:", df.columns)
-        st.write("First few rows of the dataset:", df.head())
-        return df
-    except Exception as e:
-        st.error(f"Error loading dataset: {e}")
-        return pd.DataFrame()
-    
-    
-def DrawInputsWidgets():
-    
-    df = load_ames_data()
-    if df.empty:
-         st.error("Dataset is empty or could not be loaded.")
-         return
+    # Generate live data
+    X_live = DrawInputsWidgets(house_features)
 
-    df = pd.read_csv("test_data.csv")
-    st.write(df.head())
+    live_price_prediction = predict_price(
+        X_live, house_features, regression_pipe)
 
-    
-    df.fillna(df.median(), inplace=True)
+    # Prediction done on live data entered by the user
+    if st.button('Predict House Sale Price'):
+        price_prediction = predict_price(
+            X_live, house_features, regression_pipe
+        )
 
-    percentageMin, percentageMax = 0.4, 2.0
-
-    # List of top features to show in widgets
-    top_features = ["OverallQual", "GrLivArea", "TotalBsmtSF", "YearBuilt", "1stFlrSF"]
-    
-    # Create columns for the input widgets
-    col1, col2, col3, col4, col5 = st.columns(5)
-
-    # Create empty DataFrame for live data
-    X_live = pd.DataFrame([], index=[0])
-
-    # Draw the widgets for each feature
-    with col1:
-        feature = top_features[0]
-        if feature in df.columns:
-            st_widget = st.number_input(
-                label=feature,
-                min_value=df[feature].min() * percentageMin,
-                max_value=df[feature].max() * percentageMax,
-                value=df[feature].median()
-            )
-            X_live[feature] = st_widget
-        else:
-            st.error(f"Feature '{feature}' not found in the dataset.")
-
-    with col2:
-        feature = top_features[1]
-        if feature in df.columns:
-            st_widget = st.number_input(
-                label=feature,
-                min_value=df[feature].min() * percentageMin,
-                max_value=df[feature].max() * percentageMax,
-                value=df[feature].median()
-            )
-            X_live[feature] = st_widget
-        else:
-            st.error(f"Feature '{feature}' not found in the dataset.")
-
-    with col3:
-        feature = top_features[2]
-        if feature in df.columns:
-            st_widget = st.number_input(
-                label=feature,
-                min_value=df[feature].min() * percentageMin,
-                max_value=df[feature].max() * percentageMax,
-                value=df[feature].median()
-            )
-            X_live[feature] = st_widget
-        else:
-            st.error(f"Feature '{feature}' not found in the dataset.")
-
-    with col4:
-        feature = top_features[3]
-        if feature in df.columns:
-            st_widget = st.number_input(
-                label=feature,
-                min_value=df[feature].min() * percentageMin,
-                max_value=df[feature].max() * percentageMax,
-                value=df[feature].median()
-            )
-            X_live[feature] = st_widget
-        else:
-            st.error(f"Feature '{feature}' not found in the dataset.")
-
-    with col5:
-        feature = top_features[4]
-        if feature in df.columns:
-            st_widget = st.number_input(
-                label=feature,
-                min_value=df[feature].min() * percentageMin,
-                max_value=df[feature].max() * percentageMax,
-                value=df[feature].median()
-            )
-            X_live[feature] = st_widget
-        else:
-            st.error(f"Feature '{feature}' not found in the dataset.")
-
-    return X_live
+    st.write("---")
 
 
-if __name__ == "__main__":
-    X_live = DrawInputsWidgets()
-    if not X_live.empty:
-        st.write("Live Data from Widgets:")
-        st.write(X_live)
 
