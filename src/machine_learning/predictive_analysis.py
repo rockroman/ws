@@ -53,23 +53,9 @@ def load_model_and_predict(my_image, version):
     st.write(f"Preprocessed image shape: {my_image.shape}")
     try:
         model_path = f'outputs/{version}/trained_model.h5'
-        # /workspace/mildew-detector/outputs/v2/trained_model.h5
-        full_path = os.path.abspath(model_path)
-        st.write(f"Full path to model: {full_path}")
 
-        # Check if the model file exists
-        if not os.path.isfile(full_path):
-            raise FileNotFoundError(f"Model file does not exist: {full_path}")
 
-        # Check file size
-        file_size = os.path.getsize(full_path)
-        if file_size == 0:
-            raise ValueError(f"Model file is empty: {full_path}")
-
-        st.write(f"Model file found: {full_path}")
-        st.write(f"Model file size: {file_size} bytes")
-
-        # Load the model (specifying compile=False for inference)
+        # Loading the model 
         model = load_model(full_path, compile=False)
         st.write("Model loaded successfully.")
 
