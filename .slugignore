@@ -1,0 +1,5 @@
+jupyter_notebooks
+outputs/v1
+inputs/cherry_leaves_dataset/cherry-leaves/test
+inputs/cherry_leaves_dataset/cherry-leaves/train
+.gitattributes
