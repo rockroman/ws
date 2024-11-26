@@ -472,6 +472,8 @@ Steps for deployment on Heroku are:
                                                             
 **[Heroku](https://www.heroku.com/)** Heroku is a platform as a service (PaaS) to build, run, and operate applications cloud-based. It was used to deploy the website
 
+**[CI Python Linter](https://pep8ci.herokuapp.com/)** The Code Institute Python Linter was used to validate Python code			
+
 **[Techsini](https://techsini.com/multi-mockup/)** Multi Device Website Mockup generator
            
 **[Visual Studio Code](https://code.visualstudio.com/)** Visual Studio Code (VS-Code) was used as integrated development environment (IDE) for the entire project. The GitHub repository was cloned to VS-Code for this purpose	
