@@ -27,9 +27,10 @@ This project aims to understand and predict house prices by analyzing various fa
   - [Page 4: Hypothesis](#page-4-hypothesis)
   - [Page 5: Technical Page | Model Performance Page](#page-5-technical-page--model-performance-page)
   - [9. Unfixed Bugs](#9-unfixed-bugs)
-  - [10. Deployment](#10-deployment)
+  - [10. Manual Testing](#10-manual-testing)
+  - [11. Deployment](#11-deployment)
     - [Heroku](#heroku)
-  - [11. Packages and technologies used](#11-packages-and-technologies-used)
+  - [12. Packages and technologies used](#12-packages-and-technologies-used)
     - [Technologies used:](#technologies-used)
     - [Main Data Analysis and Machine Learning Libraries](#main-data-analysis-and-machine-learning-libraries)
   - [Credits](#credits)
@@ -420,7 +421,17 @@ SalePrice and each (important) created different types of plots
 ## 9. Unfixed Bugs
 
 
-## 10. Deployment
+
+## 10. Manual Testing
+
+* The widget for OverallQual does not accept values less than 1 or greater than 10. Manual input within the range is accepted. Values outside the boundary result in a warning to the user.
+
+* The values in widgets for continuous value features can be changed with the +/- sign in the widget, but can also be entered manually. Values for categorical features of ordinal nature (e.g., "OverallQual") can be entered manually or adjusted with the +/- sign in the widget.
+
+* Verify the calculation with widgets to ensure proper functionality: Important features for house 1 (index 0) should be entered into the widgets to verify that the projected sales price matches US$ 130,229. The same steps should be repeated for houses 2 to 4 to verify that the widgets calculate the projected price based on regression analysis. This testing step ensures that calculations based on widget inputs are consistent with the regression analysis used to determine the individual house prices of the inherited properties.
+
+
+## 11. Deployment
 
 ### Heroku
 
@@ -439,7 +450,7 @@ Steps for deployment on Heroku are:
 5. The deployment process should happen smoothly if all deployment files are fully functional. Click the button Open App on the top of the page to access your App.
 6. If the slug size is too large then add large files not required for the app to the .slugignore file.
 
-## 11. Packages and technologies used
+## 12. Packages and technologies used
                                                            
 ### Technologies used:
 
