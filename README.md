@@ -28,6 +28,8 @@ This project aims to understand and predict house prices by analyzing various fa
   - [Page 5: Technical Page | Model Performance Page](#page-5-technical-page--model-performance-page)
   - [9. Unfixed Bugs](#9-unfixed-bugs)
   - [10. Manual Testing](#10-manual-testing)
+    - [Widget input testing](#widget-input-testing)
+    - [Sanity Check on Regression Model](#sanity-check-on-regression-model)
   - [11. Deployment](#11-deployment)
     - [Heroku](#heroku)
   - [12. Packages and technologies used](#12-packages-and-technologies-used)
@@ -424,12 +426,22 @@ SalePrice and each (important) created different types of plots
 
 ## 10. Manual Testing
 
+### Widget input testing
+
 * The widget for OverallQual does not accept values less than 1 or greater than 10. Manual input within the range is accepted. Values outside the boundary result in a warning to the user.
 
 * The values in widgets for continuous value features can be changed with the +/- sign in the widget, but can also be entered manually. Values for categorical features of ordinal nature (e.g., "OverallQual") can be entered manually or adjusted with the +/- sign in the widget.
 
 * Verify the calculation with widgets to ensure proper functionality: Important features for house 1 (index 0) should be entered into the widgets to verify that the projected sales price matches US$ 130,229. The same steps should be repeated for houses 2 to 4 to verify that the widgets calculate the projected price based on regression analysis. This testing step ensures that calculations based on widget inputs are consistent with the regression analysis used to determine the individual house prices of the inherited properties.
 
+### Sanity Check on Regression Model
+
+I performed a manual sanity check on the regression model by comparing the predicted **SalePrice** with the known **SalePrice** in the dataset.  
+This sanity check verifies that the model's calculations align with the underlying dataset.  
+This approach of "heuristically" cross-checking the regression outcomes helps ensure that model predictions and the assumptions made during the pipeline definition of the ML model are logical and consistent.
+
+- **Manually comparing SalePrice values:** Cross-checked the predicted SalePrice with the actual SalePrice for several records in the dataset.
+- **Feature validation:** Verified if the features determined to be of importance correlate logically with the SalePrice.
 
 ## 11. Deployment
 
