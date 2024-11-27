@@ -1,4 +1,6 @@
-numpy==1.19.5
+numpy==1.26.4
+scikit-learn==1.5.1
+joblib==1.4.2
 pandas==1.3.5
 matplotlib==3.4.3
 seaborn==0.11.2
@@ -8,7 +10,6 @@ ppscore==1.3.0
 streamlit==0.88.0
 feature-engine==1.0.2
 imbalanced-learn==0.8.0
-scikit-learn==1.0.0
 xgboost==1.3.3
 yellowbrick==1.3
 Jinja2==3.0.3
@@ -16,4 +17,3 @@ MarkupSafe==2.0.1
 protobuf==3.20
 ipywidgets==7.6.5
 altair==4.1.0
-joblib==1.0.1
