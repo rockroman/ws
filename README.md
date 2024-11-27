@@ -544,7 +544,6 @@ the underlying project goal
 ## Acknowledgements (optional)
 
 * In case you would like to thank the people that provided support through this project
-
   
   
 
